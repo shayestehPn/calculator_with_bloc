@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../business_logic/calculator_cubit.dart';
 import '../../const.dart';
@@ -17,7 +18,7 @@ class CalculatorButton extends StatelessWidget {
         return ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: const CircleBorder(side: BorderSide()),
-            fixedSize: const Size(75, 75),
+            fixedSize:  Size(75.r, 75.r),
             backgroundColor: getButtonBackGroundColor(),
           ),
           onPressed: () {
@@ -26,7 +27,7 @@ class CalculatorButton extends StatelessWidget {
           child: Text(
             label,
             style: TextStyle(
-              fontSize: 22,
+              fontSize: 22.sp,
               color: getButtonTextColor(),
             ),
           ),

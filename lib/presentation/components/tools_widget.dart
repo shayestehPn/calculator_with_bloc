@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_calculator/business_logic/calculator_cubit.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../const.dart';
 
@@ -14,7 +15,7 @@ class ToolsWidget extends StatelessWidget {
         return Expanded(
           flex: 1,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: EdgeInsets.symmetric(horizontal: 15.w),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -42,7 +43,7 @@ class ToolsWidget extends StatelessWidget {
                 ),
                 IconButton(
                   onPressed: () {
-                      context.read<CalculatorCubit>().clearValueFromEnd();
+                    context.read<CalculatorCubit>().clearValueFromEnd();
                   },
                   icon: Icon(
                     Icons.backspace_outlined,

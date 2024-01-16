@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_calculator/business_logic/calculator_cubit.dart';
 import 'package:flutter_calculator/business_logic/calculator_state.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ScreenWidget extends StatelessWidget {
   const ScreenWidget({super.key});
@@ -16,18 +17,18 @@ class ScreenWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Padding(
-                padding: const EdgeInsets.all(15),
+                padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.w),
                 child: Text(
                   state.inputValue.isEmpty ? "0" : state.inputValue,
-                  style: const TextStyle(fontSize: 32),
+                  style: TextStyle(fontSize: 32.sp),
                   textAlign: TextAlign.right,
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(15),
+                padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.w),
                 child: Text(
                   state.calculatedResult,
-                  style: const TextStyle(fontSize: 40),
+                  style: TextStyle(fontSize: 40.sp),
                   textAlign: TextAlign.right,
                 ),
               ),
