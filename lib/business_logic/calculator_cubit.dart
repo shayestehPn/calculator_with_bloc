@@ -1,4 +1,6 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_calculator/utils/constants.dart';
 import 'package:math_expressions/math_expressions.dart';
 
 import 'calculator_state.dart';
@@ -24,15 +26,17 @@ class CalculatorCubit extends Cubit<CalculatorState> {
   }
 
   void clearInputValue() {
-    emit(state.copyWith(inputValue: "",calculatedResult: ""));
+    emit(state.copyWith(inputValue: "", calculatedResult: ""));
   }
 
-  void userPressedButton(String buttonLabel){
+  void userPressedButton(String buttonLabel) {
     if (buttonLabel == 'C') {
       clearInputValue();
-    } else if(buttonLabel=="="){
+    } else if (buttonLabel == "=") {
       calculateValue();
-    }else{
+    } else if (buttonLabel == "( )") {
+      addPressedButtonValue(getParenthesesValue());
+    } else {
       addPressedButtonValue(buttonLabel);
     }
   }
@@ -41,6 +45,26 @@ class CalculatorCubit extends Cubit<CalculatorState> {
     String previousValue = state.inputValue;
     if (previousValue.isNotEmpty) {
       setInputValue(previousValue.substring(0, previousValue.length - 1));
+    }
+  }
+
+  String getParenthesesValue(){
+
+    int numberOfOpenParentheses=0;
+    List inputCharacters=state.inputValue.characters.toList();
+
+    for(var element in inputCharacters){
+      if(element=="("){
+        numberOfOpenParentheses++;
+      }else if(element==")"){
+        numberOfOpenParentheses--;
+      }
+    }
+    if(numberOfOpenParentheses>0 &&
+        !operators.contains(inputCharacters.last)){
+      return ")";
+    }else{
+      return "(";
     }
   }
 }
