@@ -50,7 +50,7 @@ class CalculatorButton extends StatelessWidget {
   bool buttonIsCleanButton() => label == "C";
 
   bool buttonIsOperator() {
-    var operators = ['()', '%', '/', '*', '-', '+'];
+    var operators = ['( )', '%', '/', '*', '-', '+'];
     return operators.contains(label);
   }
 }

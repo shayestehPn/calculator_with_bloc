@@ -15,7 +15,7 @@ class ButtonsWidget extends StatelessWidget {
         child: const Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            ButtonsRow(label1: 'C', label2: '()', label3: '%', label4: '/'),
+            ButtonsRow(label1: 'C', label2: '( )', label3: '%', label4: '/'),
             ButtonsRow(label1: '7', label2: '8', label3: '9', label4: '*'),
             ButtonsRow(label1: '4', label2: '5', label3: '6', label4: '-'),
             ButtonsRow(label1: '1', label2: '2', label3: '3', label4: '+'),
