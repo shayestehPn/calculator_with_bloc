@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../business_logic/calculator_cubit.dart';
-import '../../const.dart';
+import '../../constants.dart';
 
 class CalculatorButton extends StatelessWidget {
   const CalculatorButton(
