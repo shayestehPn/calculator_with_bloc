@@ -18,7 +18,7 @@ class ScreenWidget extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(15),
                 child: Text(
-                  inputNumberText(state.inputValue, state.inputValue),
+                  state.inputValue.isEmpty ? "0" : state.inputValue,
                   style: const TextStyle(fontSize: 32),
                   textAlign: TextAlign.right,
                 ),
@@ -36,12 +36,5 @@ class ScreenWidget extends StatelessWidget {
         );
       },
     );
-  }
-
-  String inputNumberText(String text, String inputValue) {
-    if (inputValue.isEmpty) {
-      return '0';
-    }
-    return inputValue;
   }
 }
