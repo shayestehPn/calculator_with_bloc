@@ -9,11 +9,9 @@ class CalculatorCubit extends Cubit<CalculatorState> {
   void calculateValue() {
     Parser p = Parser();
     Expression exp = p.parse(state.inputValue);
-
     ContextModel equal = ContextModel();
-
     double eval = exp.evaluate(EvaluationType.REAL, equal);
-    emit(state.copyWith(calculateResult: eval.toString()));
+    emit(state.copyWith(calculatedResult: eval.toString()));
   }
 
   void addEnteredValue(String value) {
@@ -26,7 +24,7 @@ class CalculatorCubit extends Cubit<CalculatorState> {
   }
 
   void clearInputValue() {
-    emit(state.copyWith(inputValue: "",calculateResult: ""));
+    emit(state.copyWith(inputValue: "",calculatedResult: ""));
   }
 
   void userPressesButton(String buttonLabel){

@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$CalculatorState {
-  String get calculateResult => throw _privateConstructorUsedError;
+  String get calculatedResult => throw _privateConstructorUsedError;
   String get inputValue => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -30,7 +30,7 @@ abstract class $CalculatorStateCopyWith<$Res> {
           CalculatorState value, $Res Function(CalculatorState) then) =
       _$CalculatorStateCopyWithImpl<$Res, CalculatorState>;
   @useResult
-  $Res call({String calculateResult, String inputValue});
+  $Res call({String calculatedResult, String inputValue});
 }
 
 /// @nodoc
@@ -46,13 +46,13 @@ class _$CalculatorStateCopyWithImpl<$Res, $Val extends CalculatorState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? calculateResult = null,
+    Object? calculatedResult = null,
     Object? inputValue = null,
   }) {
     return _then(_value.copyWith(
-      calculateResult: null == calculateResult
-          ? _value.calculateResult
-          : calculateResult // ignore: cast_nullable_to_non_nullable
+      calculatedResult: null == calculatedResult
+          ? _value.calculatedResult
+          : calculatedResult // ignore: cast_nullable_to_non_nullable
               as String,
       inputValue: null == inputValue
           ? _value.inputValue
@@ -70,7 +70,7 @@ abstract class _$$CalculatorStateImplCopyWith<$Res>
       __$$CalculatorStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String calculateResult, String inputValue});
+  $Res call({String calculatedResult, String inputValue});
 }
 
 /// @nodoc
@@ -84,13 +84,13 @@ class __$$CalculatorStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? calculateResult = null,
+    Object? calculatedResult = null,
     Object? inputValue = null,
   }) {
     return _then(_$CalculatorStateImpl(
-      calculateResult: null == calculateResult
-          ? _value.calculateResult
-          : calculateResult // ignore: cast_nullable_to_non_nullable
+      calculatedResult: null == calculatedResult
+          ? _value.calculatedResult
+          : calculatedResult // ignore: cast_nullable_to_non_nullable
               as String,
       inputValue: null == inputValue
           ? _value.inputValue
@@ -104,18 +104,18 @@ class __$$CalculatorStateImplCopyWithImpl<$Res>
 
 class _$CalculatorStateImpl implements _CalculatorState {
   const _$CalculatorStateImpl(
-      {this.calculateResult = "", this.inputValue = ""});
+      {this.calculatedResult = "", this.inputValue = ""});
 
   @override
   @JsonKey()
-  final String calculateResult;
+  final String calculatedResult;
   @override
   @JsonKey()
   final String inputValue;
 
   @override
   String toString() {
-    return 'CalculatorState(calculateResult: $calculateResult, inputValue: $inputValue)';
+    return 'CalculatorState(calculatedResult: $calculatedResult, inputValue: $inputValue)';
   }
 
   @override
@@ -123,14 +123,14 @@ class _$CalculatorStateImpl implements _CalculatorState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CalculatorStateImpl &&
-            (identical(other.calculateResult, calculateResult) ||
-                other.calculateResult == calculateResult) &&
+            (identical(other.calculatedResult, calculatedResult) ||
+                other.calculatedResult == calculatedResult) &&
             (identical(other.inputValue, inputValue) ||
                 other.inputValue == inputValue));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, calculateResult, inputValue);
+  int get hashCode => Object.hash(runtimeType, calculatedResult, inputValue);
 
   @JsonKey(ignore: true)
   @override
@@ -142,11 +142,11 @@ class _$CalculatorStateImpl implements _CalculatorState {
 
 abstract class _CalculatorState implements CalculatorState {
   const factory _CalculatorState(
-      {final String calculateResult,
+      {final String calculatedResult,
       final String inputValue}) = _$CalculatorStateImpl;
 
   @override
-  String get calculateResult;
+  String get calculatedResult;
   @override
   String get inputValue;
   @override

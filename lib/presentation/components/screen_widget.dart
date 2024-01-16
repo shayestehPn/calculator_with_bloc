@@ -26,7 +26,7 @@ class ScreenWidget extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(15),
                 child: Text(
-                  state.calculateResult,
+                  state.calculatedResult,
                   style: const TextStyle(fontSize: 40),
                   textAlign: TextAlign.right,
                 ),
