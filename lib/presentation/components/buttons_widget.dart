@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'buttons_row.dart';
 
@@ -7,11 +8,11 @@ class ButtonsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Expanded(
+    return Expanded(
       flex: 5,
       child: Padding(
-        padding: EdgeInsets.all(8.0),
-        child: Column(
+        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.w),
+        child: const Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ButtonsRow(label1: 'C', label2: '()', label3: '%', label4: '/'),

@@ -21,7 +21,7 @@ class CalculatorButton extends StatelessWidget {
             backgroundColor: getButtonBackGroundColor(),
           ),
           onPressed: () {
-            context.read<CalculatorCubit>().userPressesButton(label);
+            context.read<CalculatorCubit>().userPressedButton(label);
           },
           child: Text(
             label,

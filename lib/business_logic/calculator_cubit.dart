@@ -14,7 +14,7 @@ class CalculatorCubit extends Cubit<CalculatorState> {
     emit(state.copyWith(calculatedResult: eval.toString()));
   }
 
-  void addEnteredValue(String value) {
+  void addPressedButtonValue(String value) {
     String previousValue = state.inputValue;
     setInputValue(previousValue + value);
   }
@@ -27,13 +27,13 @@ class CalculatorCubit extends Cubit<CalculatorState> {
     emit(state.copyWith(inputValue: "",calculatedResult: ""));
   }
 
-  void userPressesButton(String buttonLabel){
+  void userPressedButton(String buttonLabel){
     if (buttonLabel == 'C') {
       clearInputValue();
     } else if(buttonLabel=="="){
       calculateValue();
     }else{
-      addEnteredValue(buttonLabel);
+      addPressedButtonValue(buttonLabel);
     }
   }
 
