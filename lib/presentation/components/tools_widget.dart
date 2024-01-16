@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_calculator/business_logic/calculator_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../constants.dart';
+import '../../utils/constants.dart';
 
 class ToolsWidget extends StatelessWidget {
   const ToolsWidget({super.key});

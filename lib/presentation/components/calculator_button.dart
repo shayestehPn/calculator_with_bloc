@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_calculator/utils/extensions/context_extension.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../business_logic/calculator_cubit.dart';
-import '../../constants.dart';
+import '../../utils/constants.dart';
 
 class CalculatorButton extends StatelessWidget {
-  const CalculatorButton(
+   CalculatorButton(
       {super.key, required this.label});
 
   final String label;
+  final List notPressableButtonsLabel=["+/-"];
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,11 @@ class CalculatorButton extends StatelessWidget {
             backgroundColor: getButtonBackGroundColor(),
           ),
           onPressed: () {
-            context.read<CalculatorCubit>().userPressedButton(label);
+            if(!notPressableButtonsLabel.contains(label)){
+              context.read<CalculatorCubit>().userPressedButton(label);
+            }else{
+              context.showAlert("دکمه کلیک شده فعال نمی باشد",true);
+            }
           },
           child: Text(
             label,
