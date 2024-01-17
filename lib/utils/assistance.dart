@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class Assistance  {
-  void showAlert(String message, bool isError) {
+ static void showAlert(String message, bool isError) {
     Get.showSnackbar(
       GetSnackBar(
           margin: EdgeInsets.only(right: 16.w, left: 16.w, top: 10.h),

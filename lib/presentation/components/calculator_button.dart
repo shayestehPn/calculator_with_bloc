@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_calculator/utils/extensions/context_extension.dart';
+import 'package:flutter_calculator/utils/assistance.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../business_logic/calculator_cubit.dart';
@@ -27,7 +27,7 @@ class CalculatorButton extends StatelessWidget {
             if(!notPressableButtonsLabel.contains(label)){
               context.read<CalculatorCubit>().userPressedButton(label);
             }else{
-              context.showAlert("دکمه کلیک شده فعال نمی باشد",true);
+             Assistance.showAlert("دکمه کلیک شده فعال نمی باشد",true);
             }
           },
           child: Text(
@@ -56,7 +56,6 @@ class CalculatorButton extends StatelessWidget {
   bool buttonIsCleanButton() => label == "C";
 
   bool buttonIsOperator() {
-    var operators = ['( )', '%', '/', '*', '-', '+'];
     return operators.contains(label);
   }
 }
