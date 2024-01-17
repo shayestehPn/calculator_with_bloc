@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_calculator/utils/assistance.dart';
 import 'package:flutter_calculator/utils/constants.dart';
 import 'package:math_expressions/math_expressions.dart';
 
@@ -9,11 +10,16 @@ class CalculatorCubit extends Cubit<CalculatorState> {
   CalculatorCubit() : super(const CalculatorState());
 
   void calculateValue() {
-    Parser p = Parser();
-    Expression exp = p.parse(state.inputValue);
-    ContextModel equal = ContextModel();
-    double eval = exp.evaluate(EvaluationType.REAL, equal);
-    emit(state.copyWith(calculatedResult: eval.toString()));
+    try{
+      Parser p = Parser();
+      Expression exp = p.parse(state.inputValue);
+      ContextModel equal = ContextModel();
+      double eval = exp.evaluate(EvaluationType.REAL, equal);
+      emit(state.copyWith(calculatedResult: eval.toString()));
+    }catch(e){
+      Assistance.showAlert("عبارت وارد شده نامعتبر است.", true);
+    }
+
   }
 
   void addPressedButtonValue(String value) {

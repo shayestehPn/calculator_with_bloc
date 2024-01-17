@@ -31,7 +31,7 @@ class CalculatorButton extends StatelessWidget {
             }
           },
           child: Text(
-            label,
+            label=="*"?"X":label,
             style: TextStyle(
               fontSize: 22.sp,
               color: getButtonTextColor(),
